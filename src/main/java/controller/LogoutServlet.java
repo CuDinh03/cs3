@@ -1,10 +1,12 @@
 package controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,13 +15,19 @@ import java.io.PrintWriter;
 public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
+        try {
             if(request.getSession().getAttribute("nameuser")!=null) {
-                request.getSession().setAttribute("nameuser",null);
-                request.getSession().removeAttribute("username");
-                response.sendRedirect("index.jsp");
+                HttpSession session = request.getSession();
+
+                session.invalidate();
+
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login");
+                dispatcher.forward(request,response);
             }
 
+        }finally {
+            out.close();
         }
     }
     @Override

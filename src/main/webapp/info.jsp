@@ -86,7 +86,7 @@
                     <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                 </a>
                 <% if (request.getSession().getAttribute("nameuser") != null) { %>
-                <a class="btn btn-outline-dark" type="button" href="/info.jsp">
+                <a class="btn btn-outline-dark" type="button" href="/info">
                     <i class='far fa-address-card' style='font-size:24px'></i>
                     Info
                 </a>

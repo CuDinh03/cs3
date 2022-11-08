@@ -15,8 +15,8 @@
 <body>
 <div class="container mt-3">
     <h2>Danh sách sản phẩm </h2>
-    <a href="index.jsp" type="button">Home</a>
-    <a href="addProduct.jsp" type="button">Add</a>
+    <a href="/ProductServlet" type="button" class="btn btn-dark">Home</a>
+    <a href="addProduct.jsp" type="button" class="btn btn-dark">Add</a>
     <form action="/addProduct" method="post">
     <table class="table table-striped">
         <tr>
@@ -53,7 +53,7 @@
                 <button type="submit" class="btn btn-success">Add</button>
             </td>
             <td>
-                <a type="button" class="btn btn-warning" href="/adminView.jsp">Cancel</a>
+                <a type="button" class="btn btn-warning" href="/ProductServlet">Cancel</a>
             </td>
         </tr>
 

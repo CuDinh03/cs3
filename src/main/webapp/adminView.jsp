@@ -115,7 +115,7 @@
                 <!-- Content Row -->
                 <div class="container mt-3">
                     <h2>Danh sách sản phẩm </h2>
-                    <a href="index.jsp" type="button" class="btn btn-dark">Home</a>
+                    <a href="/ProductServlet" type="button" class="btn btn-dark">Home</a>
                     <a href="addProduct.jsp" type="button" class="btn btn-dark">Add</a>
                     <a href="/login" type="button" class="btn btn-dark">Logout</a>
                     <table class="table table-striped">
