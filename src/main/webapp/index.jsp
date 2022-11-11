@@ -58,7 +58,9 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="https://s.memehay.com/files/posts/20200811/1d45a7397bf57f2bc973292b7206c712anh-da-den-cam-dep-choi.jpg">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
+                <% if (request.getSession().getAttribute("nameuser")== null){ %>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <%}%>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
