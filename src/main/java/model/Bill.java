@@ -5,13 +5,13 @@ public class Bill {
     private int idProduct;
     private int idUser;
     private int idCart;
-    private int priceBill;
+    private double priceBill;
     private String detail;
 
     public Bill() {
     }
 
-    public Bill(int idBill, int idProduct, int idUser, int idCart, int priceBill, String detail) {
+    public Bill(int idBill, int idProduct, int idUser, int idCart, double priceBill, String detail) {
         this.idBill = idBill;
         this.idProduct = idProduct;
         this.idUser = idUser;
@@ -20,12 +20,17 @@ public class Bill {
         this.detail = detail;
     }
 
-    public Bill(int idProduct, int idUser, int idCart, int priceBill, String detail) {
+    public Bill(int idProduct, int idUser, int idCart, double priceBill, String detail) {
         this.idProduct = idProduct;
         this.idUser = idUser;
         this.idCart = idCart;
         this.priceBill = priceBill;
         this.detail = detail;
+    }
+
+    public Bill(int idUser, double priceBill) {
+        this.idUser = idUser;
+        this.priceBill = priceBill;
     }
 
     public int getIdBill() {
@@ -60,11 +65,11 @@ public class Bill {
         this.idCart = idCart;
     }
 
-    public int getPriceBill() {
+    public double getPriceBill() {
         return priceBill;
     }
 
-    public void setPriceBill(int priceBill) {
+    public void setPriceBill(double priceBill) {
         this.priceBill = priceBill;
     }
 

@@ -34,6 +34,9 @@ public class Product {
         this.detail = detail;
     }
 
+    public Product(int id, String img, String name, Double price) {
+    }
+
     public int getIdProduct() {
         return idProduct;
     }

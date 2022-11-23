@@ -183,5 +183,28 @@ public class CRUD_Product {
 
     }
 
+    public static Product FindProductById(int id1)
+    {
+        Product products = null;
+        try{
+            String sql = "Select * from product where id =?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,id1);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String img = resultSet.getString("img");
+                String name = resultSet.getString("name");
+                Double price = resultSet.getDouble("price");
+                products = new Product(id,img,name,price);
+            }
+            return products;
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
 
 }
