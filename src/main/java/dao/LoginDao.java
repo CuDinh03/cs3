@@ -26,7 +26,7 @@ public class LoginDao {
                 String img1 = resultSet.getString("img");
                 int role1 = resultSet.getInt("role");
 
-                user = new User(iduser1,nameuser1, username1, password1,contact1, address1,email1,img1,role1, 0);
+                user = new User(iduser1,nameuser1, username1, password1,contact1, address1,email1,img1,role1);
             }
             return user;
         } catch (SQLException throwables) {
